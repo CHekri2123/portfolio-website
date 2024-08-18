@@ -7,11 +7,11 @@ function Home() {
   const navigate = useNavigate();
 
   const handleBioClick = () => {
-    navigate("/bio");
+    navigate("/kalyan/bio");
   };
 
   const handleProjectsClick = () => {
-    navigate("/projects");
+    navigate("/kalyan/projects");
   };
 
   return (

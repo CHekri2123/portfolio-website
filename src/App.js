@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import MyNavbar from "./components/MyNavbar";
 import Home from "./components/Home";
@@ -18,10 +18,14 @@ function App() {
       </div>
       <div className="home">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/bio" element={<Bio />} />
-          <Route path="/projects" element={<Projects />} />
+          {/* Redirect from / to /kalyan */}
+          <Route path="/" element={<Navigate to="/kalyan" />} />
+
+          {/* Set up your other routes */}
+          <Route path="/kalyan" element={<Home />} />
+          <Route path="/kalyan/contacts" element={<Contacts />} />
+          <Route path="/kalyan/bio" element={<Bio />} />
+          <Route path="/kalyan/projects" element={<Projects />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>
